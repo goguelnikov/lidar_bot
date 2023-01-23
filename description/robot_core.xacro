@@ -68,6 +68,7 @@
                 <cylinder radius="0.035" length="0.06"/>
             </geometry>
         </collision>
+        <!-- ... intertia ... -->
         <xacro:inertial_cylinder mass="0.1" length="0.035" radius="0.06">
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder>
@@ -88,11 +89,12 @@
             </geometry>
             <material name="blue"/>
         </visual>
-		<collision>
+        <collision>
             <geometry>
                 <cylinder radius="0.035" length="0.06"/>
             </geometry>
         </collision>
+        <!-- ... intertia ... -->
         <xacro:inertial_cylinder mass="0.1" length="0.035" radius="0.06">
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder>
@@ -118,6 +120,7 @@
                 <cylinder radius="0.035" length="0.06"/>
             </geometry>
         </collision>
+		<!-- ... intertia ... -->
         <xacro:inertial_cylinder mass="0.1" length="0.035" radius="0.06">
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder>
@@ -143,6 +146,7 @@
                 <cylinder radius="0.035" length="0.06"/>
             </geometry>
         </collision>
+        <!-- ... intertia ... -->
         <xacro:inertial_cylinder mass="0.1" length="0.035" radius="0.06">
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder>
