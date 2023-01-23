@@ -29,14 +29,22 @@
     <!-- CHASSIS -->
     <link name="chassis">
         <visual>
+<<<<<<< HEAD
+            <origin xyz="0.10 0 0.035" rpy="0 0 0"/>
+=======
             <origin xyz="0.10 0 0.07" rpy="0 0 0"/>
+>>>>>>> a857f3169a5c65cf19696927df2dc6cf8b4c78b2
             <geometry>
                 <box size="0.20 0.19 0.12"/>
             </geometry>
             <material name="white"/>
         </visual>
         <collision>
+<<<<<<< HEAD
+            <origin xyz="0.10 0 0.035" rpy="0 0 0"/>
+=======
             <origin xyz="0.10 0 0.07" rpy="0 0 0"/>
+>>>>>>> a857f3169a5c65cf19696927df2dc6cf8b4c78b2
             <geometry>
                 <box size="0.20 0.19 0.12"/>
             </geometry>
@@ -51,19 +59,37 @@
     <!-- LEFT BACK WHEEL -->
     <joint name="left_back_wheel_joint" type="continuous">
         <parent link="base_link"/>
+<<<<<<< HEAD
+        <child link="left_back_wheel"/>
+        <origin xyz="-0.0675 0.09 0" rpy="${pi/2} 0 0" />
+        <axis xyz="0 0 -1"/>
+=======
         <child link="left_wheel"/>
         <origin xyz="-0.0675 0.09 0" rpy="-${pi/2} 0 0"/>
         <axis xyz="0 0 1"/>
+>>>>>>> a857f3169a5c65cf19696927df2dc6cf8b4c78b2
     </joint>
 
     <link name="left_back_wheel">
         <visual>
             <geometry>
+<<<<<<< HEAD
+                <cylinder radius="0.035" length="0.06"/>
+            </geometry>
+            <material name="blue"/>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="0.035" length="0.06"/>
+            </geometry>
+        </collision>
+=======
                 <cylinder length="0.035" radius="0.06" />/>
             </geometry>
             <material name="blue"/>
         </visual>
         <!-- ... visual and collision here ... -->
+>>>>>>> a857f3169a5c65cf19696927df2dc6cf8b4c78b2
         <xacro:inertial_cylinder mass="0.1" length="0.035" radius="0.06">
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder>
@@ -72,7 +98,11 @@
     <!-- RIGHT BACK WHEEL -->
     <joint name="right_back_wheel_joint" type="continuous">
         <parent link="base_link"/>
+<<<<<<< HEAD
+        <child link="right_back_wheel"/>
+=======
         <child link="right_wheel"/>
+>>>>>>> a857f3169a5c65cf19696927df2dc6cf8b4c78b2
         <origin xyz="-0.0675 -0.09 0" rpy="${pi/2} 0 0"/>
         <axis xyz="0 0 -1"/>
     </joint>
@@ -80,11 +110,23 @@
     <link name="right_back_wheel">
         <visual>
             <geometry>
+<<<<<<< HEAD
+                <cylinder radius="0.035" length="0.06" />/>
+            </geometry>
+            <material name="blue"/>
+        </visual>
+		<collision>
+            <geometry>
+                <cylinder radius="0.035" length="0.06"/>
+            </geometry>
+        </collision>
+=======
                 <cylinder length="0.035" radius="0.06" />/>
             </geometry>
             <material name="blue"/>
         </visual>
         <!-- ... visual and collision here ... -->
+>>>>>>> a857f3169a5c65cf19696927df2dc6cf8b4c78b2
         <xacro:inertial_cylinder mass="0.1" length="0.035" radius="0.06">
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder>
@@ -93,7 +135,11 @@
     <!-- LEFT FRONT WHEEL -->
     <joint name="left_front_wheel_joint" type="continuous">
         <parent link="base_link"/>
+<<<<<<< HEAD
+        <child link="left_front_wheel"/>
+=======
         <child link="left_wheel"/>
+>>>>>>> a857f3169a5c65cf19696927df2dc6cf8b4c78b2
         <origin xyz="0.0675 0.09 0" rpy="-${pi/2} 0 0"/>
         <axis xyz="0 0 1"/>
     </joint>
@@ -101,11 +147,23 @@
     <link name="left_front_wheel">
         <visual>
             <geometry>
+<<<<<<< HEAD
+                <cylinder radius="0.035" length="0.06" />/>
+            </geometry>
+            <material name="blue"/>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="0.035" length="0.06"/>
+            </geometry>
+        </collision>
+=======
                 <cylinder length="0.035" radius="0.06" />/>
             </geometry>
             <material name="blue"/>
         </visual>
         <!-- ... visual and collision here ... -->
+>>>>>>> a857f3169a5c65cf19696927df2dc6cf8b4c78b2
         <xacro:inertial_cylinder mass="0.1" length="0.035" radius="0.06">
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder>
@@ -114,7 +172,11 @@
     <!-- RIGHT FRONT WHEEL -->
     <joint name="right_front_wheel_joint" type="continuous">
         <parent link="base_link"/>
+<<<<<<< HEAD
+        <child link="right_front_wheel"/>
+=======
         <child link="right_wheel"/>
+>>>>>>> a857f3169a5c65cf19696927df2dc6cf8b4c78b2
         <origin xyz="0.0675 -0.09 0" rpy="${pi/2} 0 0"/>
         <axis xyz="0 0 -1"/>
     </joint>
@@ -122,14 +184,30 @@
     <link name="right_front_wheel">
         <visual>
             <geometry>
+<<<<<<< HEAD
+                <cylinder radius="0.035" length="0.06" />/>
+            </geometry>
+            <material name="blue"/>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="0.035" length="0.06"/>
+            </geometry>
+        </collision>
+=======
                 <cylinder length="0.035" radius="0.06" />/>
             </geometry>
             <material name="blue"/>
         </visual>
         <!-- ... visual and collision here ... -->
+>>>>>>> a857f3169a5c65cf19696927df2dc6cf8b4c78b2
         <xacro:inertial_cylinder mass="0.1" length="0.035" radius="0.06">
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder>
     </link>
 
+<<<<<<< HEAD
 </robot>
+=======
+</robot>
+>>>>>>> a857f3169a5c65cf19696927df2dc6cf8b4c78b2
