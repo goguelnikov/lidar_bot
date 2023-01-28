@@ -16,6 +16,10 @@
     <material name="black">
         <color rgba="0 0 0 1"/>
     </material>
+	
+	<material name="red">
+		<color rgba="1 0 0 1"/>
+	</material>
 
     <link name="base_link">
     </link>
@@ -31,24 +35,26 @@
         <visual>
             <origin xyz="0.10 0 0.035" rpy="0 0 0"/>
             <geometry>
-                <box size="0.20 0.19 0.12"/>
+                <box size="0.20 0.19 0.13"/>
             </geometry>
             <material name="white"/>
         </visual>
         <collision>
             <origin xyz="0.10 0 0.035" rpy="0 0 0"/>
             <geometry>
-                <box size="0.20 0.19 0.12"/>
+                <box size="0.20 0.19 0.13"/>
             </geometry>
         </collision>
         <!-- ... intertia ... -->
-        <xacro:inertial_box mass="0.5" x="0.20" y="0.19" z="0.12">
+        <xacro:inertial_box mass="0.5" x="0.20" y="0.19" z="0.13">
             <origin xyz="0.15 0 0.075" rpy="0 0 0"/>
         </xacro:inertial_box>
     </link>
-
-
-    <!-- LEFT BACK WHEEL -->
+	<gazebo reference="chassis">
+		<material>Gazebo/White</material>
+	</gazebo>	
+    
+	<!-- LEFT BACK WHEEL -->
     <joint name="left_back_wheel_joint" type="continuous">
         <parent link="base_link"/>
         <child link="left_back_wheel"/>
@@ -73,6 +79,10 @@
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder>
     </link>
+	
+	<gazebo reference="left_back_wheel">
+		<material>Gazebo/Blue</material>
+	</gazebo>
 
     <!-- LEFT FRONT WHEEL -->
     <joint name="left_front_wheel_joint" type="continuous">
@@ -85,7 +95,7 @@
     <link name="left_front_wheel">
         <visual>
             <geometry>
-                <cylinder radius="0.035" length="0.06" />/>
+                <cylinder radius="0.035" length="0.06" />
             </geometry>
             <material name="blue"/>
         </visual>
@@ -99,6 +109,12 @@
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder>
     </link>
+	
+	<gazebo reference="left_front_wheel">
+		<material>Gazebo/Blue</material>
+		<mu1 value="0.1"/>
+		<mu2 value="0.1"/>
+	</gazebo>
 
     <!-- RIGHT BACK WHEEL -->
     <joint name="right_back_wheel_joint" type="continuous">
@@ -111,7 +127,7 @@
     <link name="right_back_wheel">
         <visual>
             <geometry>
-                <cylinder radius="0.035" length="0.06" />/>
+                <cylinder radius="0.035" length="0.06" />
             </geometry>
             <material name="blue"/>
         </visual>
@@ -125,6 +141,10 @@
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder>
     </link>
+	
+	<gazebo reference="right_back_wheel">
+		<material>Gazebo/Blue</material>
+	</gazebo>
 
     <!-- RIGHT FRONT WHEEL -->
     <joint name="right_front_wheel_joint" type="continuous">
@@ -137,7 +157,7 @@
     <link name="right_front_wheel">
         <visual>
             <geometry>
-                <cylinder radius="0.035" length="0.06" />/>
+                <cylinder radius="0.035" length="0.06" />
             </geometry>
             <material name="blue"/>
         </visual>
@@ -152,33 +172,10 @@
         </xacro:inertial_cylinder>
     </link>
 
-    <!-- LIDAR -->
-    <joint name="lidar_joint" type="fixed">
-        <parent link="chassis"/>
-        <child link="lidar"/>
-        <origin xyz="0.08 0 0.10" rpy="0 0 0"/>
-        <axis xyz="0 0 0"/>
-    </joint>
-
-    <link name="lidar">
-        <visual>
-            <geometry>
-                <cylinder radius="0.035" length="0.06" />/>
-            </geometry>
-            <material name="black"/>
-        </visual>
-        <collision>
-            <geometry>
-                <cylinder radius="0.035" length="0.06"/>
-            </geometry>
-        </collision>
-        <!-- ... intertia ... -->
-        <xacro:inertial_cylinder mass="0.1" length="0.035" radius="0.06">
-            <origin xyz="0 0 0" rpy="0 0 0"/>
-        </xacro:inertial_cylinder>
-    </link>
-
-
-
+	<gazebo reference="right_front_wheel">
+		<material>Gazebo/Blue</material>
+		<mu1 value="0.1"/>
+		<mu2 value="0.1"/>
+	</gazebo>
 
 </robot>

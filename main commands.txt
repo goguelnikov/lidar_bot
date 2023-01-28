@@ -1,0 +1,40 @@
+main commands
+
+source /opt/ros/humble/setup.bash
+colcon build --symlink-install
+source install/setup.bash
+
+git add .
+git commit -am "comment"
+git push lidar_bot main
+
+
+
+ros2 launch lidar_bot rsp.launch.py
+ros2 launch lidar_bot rsp.launch.py use_sim_time:=true
+
+ros2 run joint_state_publisher_gui joint_state_publisher_gui
+
+rviz2 -d src/lidar_bot/config/lidar_bot_viz.rviz
+
+gazebo
+ros2 launch gazebo_ros gazebo.launch.py
+ros2 run gazebo_ros spawn_entity.py -topic robot_description -entity robot_name
+ros2 launch lidar_bot launch_sim.launch.py world:=src/lidar_bot/worlds/obstacles.world
+
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
+
+
+
+
+sudo apt install ros-humble-xacro ros-humble-joint-state-publisher-gui
+
+
+lidar
+
+sudo apt install ros-humble-rplidar-ros
+ros2 run rplidar_ros rplidar_composition --ros-args -p serial_port:=/dev/ttyUSB0 -p frame_id:=lidar_link -p angle_compensate:=true -p scan_mode:=Standard
+
+
+sudo dmesg | grep -i usb
+sudo chmod 777 /dev/ttyUSB0
