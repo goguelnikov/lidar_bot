@@ -10,19 +10,22 @@
     </joint>
     <link name="delta2g">
         <visual>
-			<origin xyz="0 0 -0.05" rpy="0 0 0"/>
+			<origin xyz="0 0 -0.05" rpy="0 0 ${pi}"/>
             <geometry>
                 <cylinder radius="0.035" length="0.06" />
             </geometry>
             <material name="black"/>
         </visual>
     </link>
+	<gazebo reference="delta2g">
+		<material>Gazebo/Black</material>
+	</gazebo>
 	
 	 <!-- LIDAR -->
     <joint name="lidar_joint" type="fixed">
         <parent link="chassis"/>
         <child link="lidar"/>
-        <origin xyz="0.06 0 0.18" rpy="0 0 0"/>
+        <origin xyz="0.06 0 0.20" rpy="0 0 0"/>
     </joint>
 
     <link name="lidar">

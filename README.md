@@ -16,3 +16,11 @@ to do :
 - install ROS2
 - install joint_state_publisher
   sudo apt install ros-foxy-xacro ros-foxy-joint-state-publisher-gui
+  
+- install delta2g lidar
+automatically launch delta2g Lidar
+
+- instal webcam
+check groups
+sudo usermod -aG video $USER
+sudo apt install libraspberrypi-bin v4l-utils ros-humble-v4l2-camera ros-humble-image-transport-plugins

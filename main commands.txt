@@ -10,8 +10,11 @@ git push lidar_bot main
 
 
 
+
 ros2 launch lidar_bot rsp.launch.py
 ros2 launch lidar_bot rsp.launch.py use_sim_time:=true
+
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
 
 ros2 run joint_state_publisher_gui joint_state_publisher_gui
 
@@ -37,4 +40,36 @@ ros2 run rplidar_ros rplidar_composition --ros-args -p serial_port:=/dev/ttyUSB0
 
 
 sudo dmesg | grep -i usb
+ls /dev/serial/by-id
+ls dev/serial/by-path
 sudo chmod 777 /dev/ttyUSB0
+ros2 run delta2g talker
+
+
+
+camera
+sudo apt-get install ros-${ROS_DISTRO}-v4l2-camera
+sudo usermod -aG video $USER
+
+sudo apt install libraspberrypi-bin v4l-utils ros-humble-v4l2-camera ros-humble-image-transport-plugins
+sudo apt install v4l-utils ros-humble-v4l2-camera ros-humble-image-transport-plugins
+vcgencmd get_camera
+v4l2-ctl --list-devices
+v4l2-ctl -d /dev/video0 --list-ctrls
+
+sudo apt-get install ros-${ROS_DISTRO}-rqt-image-view
+ros2 run rqt_image_view rqt_image_view
+
+
+
+sudo apt install ros-humble-ros2-control ros-humble-ros2-controllers ros-humble-gazebo-ros2-control
+sudo apt install ros-humble-controller-manager
+
+ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r /cmd_vel:=/diff_cont/cmd_vel_unstamped
+
+
+
+git clone https://github.com/joshnewans/serial
+git clone https://github.com/joshnewans/diffdrive_arduino
+cd ..
+colcon build --symlink-install
